@@ -9,17 +9,16 @@ public class StudentService {
 	//같은 번호의 학생을 찾아서 그 학생한명을 리턴
 	//없으면 null을 리턴
 	public Student findStudent(Student[] students) {
-		Student stu = new Student();
 		Scanner sc = new Scanner(System.in);
 		System.out.println("검색 학생 번호 입력");
 		int num = sc.nextInt();
-		
+		//리턴하려는 학생
+		Student stu = null;
 		for(int i = 0; i<students.length ; i++) {
 			if(num==students[i].num) {
 				stu = students[i];
-				break;
-			}else {
-				stu = null;
+				return stu;
+				//break;
 			}
 		}
 		return stu;

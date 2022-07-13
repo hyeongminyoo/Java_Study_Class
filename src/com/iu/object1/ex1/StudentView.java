@@ -12,7 +12,7 @@ public class StudentView {
 	//viewOne
 	//학생 한명의 정보를 받아서 모든 정보를 출력
 	
-	public void viewOne(Student stu) {
+	public void view(Student stu) {
 		
 			System.out.println("---------------------------------------------------------------------");
 			System.out.println(stu.name);
@@ -29,7 +29,7 @@ public class StudentView {
 	//viewAll
 	//학생들의 정보를 받아서 출력
 	
-	public void viewAll(Student [] students) {
+	public void view(Student [] students) {
 		
 		for(int i=0; i<students.length; i++) {
 			System.out.println("---------------------------------------------------------------------");

@@ -27,16 +27,15 @@ public class StudentController {
 					break;
 				case 2:
 					System.out.println("===학생 정보 조회===");
-					sv.viewAll(students);
+					sv.view(students);
 					break;
 				case 3:
 					System.out.println("===학생 정보 검색===");
 					Student stu = ss.findStudent(students);
-					if(stu == null) {
-						String msg = "없는 학생입니다";
-						sv.viewMessage(msg);
+					if(stu != null) {
+						sv.view(stu);
 					}else {
-						sv.viewOne(stu);
+						sv.viewMessage("없는 번호입니다");
 					}
 					break;
 				case 4:
