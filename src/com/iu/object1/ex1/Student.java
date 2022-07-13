@@ -7,6 +7,6 @@ public class Student {
 	int eng;
 	int math;
 	int total;
-	int avg;
+	double avg;
 
 }

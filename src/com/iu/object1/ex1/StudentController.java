@@ -9,6 +9,9 @@ public class StudentController {
 	public void start() {
 		Scanner sc = new Scanner(System.in);
 		boolean check = true;
+		StudentService ss = new StudentService();
+		StudentView sv = new StudentView();
+		Student [] students = null;
 		while(check) {
 			System.out.println("1. 학생 정보 입력");
 			System.out.println("2. 학생 정보 조회");
@@ -20,12 +23,21 @@ public class StudentController {
 			switch(select) {
 				case 1:
 					System.out.println("===학생 정보 입력===");
+					students = ss.makeStudents();
 					break;
 				case 2:
 					System.out.println("===학생 정보 조회===");
+					sv.viewAll(students);
 					break;
 				case 3:
 					System.out.println("===학생 정보 검색===");
+					Student stu = ss.findStudent(students);
+					if(stu == null) {
+						String msg = "없는 학생입니다";
+						sv.viewMessage(msg);
+					}else {
+						sv.viewOne(stu);
+					}
 					break;
 				case 4:
 					System.out.println("===학생 정보 삭제===");
