@@ -2,7 +2,7 @@ package com.iu.object4;
 
 public class Car {
 
-	String company = "쌍용";
+	static String company = "쌍용";
 	String brand;
 	String color;
 	boolean gear; //true : 오토 , false : 수동

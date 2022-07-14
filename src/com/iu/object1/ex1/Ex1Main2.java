@@ -14,13 +14,13 @@ public class Ex1Main2 {
 			st = new Student();
 			System.out.println("이름 입력"); //a, b, c
 			
-			st.name = sc.next();
+			st.setName(sc.next());
 			
 			students[i] = st;
 		}
 		
 		for(int i=0; i<students.length; i++) {
-			System.out.println(students[i].name);
+			System.out.println(students[i].getName());
 		}
 		
 		

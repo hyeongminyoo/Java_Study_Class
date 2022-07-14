@@ -15,7 +15,7 @@ public class Ex1Main3 {
 			students[i] = st;
 			System.out.println("이름 입력");
 			//students[i].name = sc.next();
-			st.name = sc.next();
+			st.setName(sc.next());
 		}
 
 	}

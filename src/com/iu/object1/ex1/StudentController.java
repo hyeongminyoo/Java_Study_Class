@@ -47,6 +47,7 @@ public class StudentController {
 					break;
 				case 4:
 					System.out.println("===학생 정보 삭제===");
+					students = ss.removeStudent(students);
 					break;
 				case 5:
 					System.out.println("===학생 정보 추가===");

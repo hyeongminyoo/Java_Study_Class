@@ -15,13 +15,13 @@ public class StudentView {
 	public void view(Student stu) {
 		
 			System.out.println("---------------------------------------------------------------------");
-			System.out.println(stu.name);
-			System.out.println(stu.num);
-			System.out.println(stu.kor);
-			System.out.println(stu.eng);
-			System.out.println(stu.math);
-			System.out.println(stu.total);
-			System.out.println(stu.avg);
+			System.out.println(stu.getName());
+			System.out.println(stu.getNum());
+			System.out.println(stu.getKor());
+			System.out.println(stu.getKor());
+			System.out.println(stu.getMath());
+			System.out.println(stu.getTotal());
+			System.out.println(stu.getAvg());
 			System.out.println("---------------------------------------------------------------------");
 	}
 	
@@ -33,9 +33,9 @@ public class StudentView {
 		
 		for(int i=0; i<students.length; i++) {
 			System.out.println("---------------------------------------------------------------------");
-			System.out.println("이름 : " + students[i].name + "\t" + "번호 : " + students[i].num );
-			System.out.println("국어 : "+ students[i].kor + "\t" + " 영어 : "+ students[i].eng+ " 수학 : "+students[i].math );
-			System.out.println("총점 : "+students[i].total+ "\t" +"평균 : "+ students[i].avg);
+			System.out.println("이름 : " + students[i].getName() + "\t" + "번호 : " + students[i].getNum() );
+			System.out.println("국어 : "+ students[i].getKor() + "\t" + " 영어 : "+ students[i].getEng()+ " 수학 : "+students[i].getMath() );
+			System.out.println("총점 : "+students[i].getTotal()+ "\t" +"평균 : "+ students[i].getAvg());
 			System.out.println("---------------------------------------------------------------------");
 		}
 

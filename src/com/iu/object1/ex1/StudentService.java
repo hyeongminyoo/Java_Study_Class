@@ -9,6 +9,43 @@ public class StudentService {
 		sc = new Scanner(System.in);
 	}
 	
+	//removeStudent
+	//학생들의 정보를 받아서
+	//삭제하려는 학생의 번호를 입력받음
+	//학생의 번호와 일치하는 학생을 삭제
+	//남은 학생들의 정보를 리턴
+	
+	public Student [] removeStudent(Student[] students) {
+		Student[] studentCopy = new Student[students.length-1];
+		System.out.println("번호를 입력");
+		int num = sc.nextInt();
+		
+		int i = 0;
+		for(i = 0; i<students.length ; i++) {
+			if(num==students[i].getNum()) {
+				break;
+			}else {
+				System.out.println("없는 번호입니다.");
+				break;
+			}
+		}	
+		int index = 0;
+		for(int j = 0; j<students.length; j++ ) {
+			 if(j==i) {
+				 j++;
+				 continue;
+			 }
+			studentCopy[index] = students[j];
+			index++;
+		}
+			students = studentCopy;
+			return students;
+	}
+	
+	
+	
+	
+	
 	//addStudent
 	//학생들의 정보를 받아서
 	//학생 한명을 추가
@@ -17,17 +54,18 @@ public class StudentService {
 		Student[] studentscopy = new Student[students.length+1];
 		Student stu = new Student();
 		System.out.println("이름을 입력하세요");
-		stu.name = sc.next();
+		stu.setName(sc.next());
 		System.out.println("번호 입력");
-		stu.num = sc.nextInt();
+		stu.setNum(sc.nextInt());
 		System.out.println("국어 입력");
-		stu.kor = sc.nextInt();
+		stu.setKor(sc.nextInt());
 		System.out.println("영어 입력");
-		stu.eng = sc.nextInt();
+		stu.setEng(sc.nextInt());
 		System.out.println("수학 입력");
-		stu.math = sc.nextInt();
+		stu.setMath(sc.nextInt());
 		
 		stu.setTotal();
+		
 		int i = 0;
 		for(i = 0; i<students.length; i++) {
 			studentscopy[i] = students[i];
@@ -49,12 +87,13 @@ public class StudentService {
 	//같은 번호의 학생을 찾아서 그 학생한명을 리턴
 	//없으면 null을 리턴
 	public Student findStudent(Student[] students) {
+		Student stu = new Student();
 		System.out.println("검색 학생 번호 입력");
 		int num = sc.nextInt();
 		//리턴하려는 학생
-		Student stu = null;
+		stu = null;
 		for(int i = 0; i<students.length ; i++) {
-			if(num==students[i].num) {
+			if(num==students[i].getNum()) {
 				stu = students[i];
 				return stu;
 				//break;
@@ -77,18 +116,18 @@ public class StudentService {
 		for(int i = 0; i<count; i++ ) {
 			Student stu = new Student();
 			System.out.println("이름을 입력하세요");
-			stu.name = sc.next();
+			stu.setName(sc.next());
 			System.out.println("번호 입력");
-			stu.num = sc.nextInt();
+			stu.setNum(sc.nextInt());
 			System.out.println("국어 입력");
-			stu.kor = sc.nextInt();
+			stu.setKor(sc.nextInt());
 			System.out.println("영어 입력");
-			stu.eng = sc.nextInt();
+			stu.setEng(sc.nextInt());
 			System.out.println("수학 입력");
-			stu.math = sc.nextInt();
+			stu.setMath(sc.nextInt());
 			
 			stu.setTotal();
-			
+
 			students[i] = stu;
 		}
 		
