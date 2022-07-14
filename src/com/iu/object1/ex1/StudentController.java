@@ -3,15 +3,22 @@ package com.iu.object1.ex1;
 import java.util.Scanner;
 
 public class StudentController {
+	Scanner sc;
+	StudentView sv;
+	StudentService ss;
+	Student [] students;
+	
+	public StudentController() {
+		sc = new Scanner(System.in);
+		sv = new StudentView();
+		ss = new StudentService();
+	}
+	
 	
 	//start 메서드 선언
 	//
 	public void start() {
-		Scanner sc = new Scanner(System.in);
 		boolean check = true;
-		StudentService ss = new StudentService();
-		StudentView sv = new StudentView();
-		Student [] students = null;
 		while(check) {
 			System.out.println("1. 학생 정보 입력");
 			System.out.println("2. 학생 정보 조회");
@@ -43,6 +50,7 @@ public class StudentController {
 					break;
 				case 5:
 					System.out.println("===학생 정보 추가===");
+					students = ss.addStudent(students);
 					break;
 				default:
 					System.out.println("===종료중===");
