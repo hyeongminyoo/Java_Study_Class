@@ -24,9 +24,6 @@ public class StudentService {
 		for(i = 0; i<students.length ; i++) {
 			if(num==students[i].getNum()) {
 				break;
-			}else {
-				System.out.println("없는 번호입니다.");
-				break;
 			}
 		}	
 		int index = 0;
